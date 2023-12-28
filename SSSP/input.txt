@@ -1,0 +1,25 @@
+10 13
+Cal 20
+Rho 20
+Vir 10
+Neb 40
+Iow 10
+Flo 5
+Con 25
+Mis 30
+Mas 0
+Njy 10
+Mas Con 200
+Cal Mas 1000
+Iow Cal 30
+Neb Njy 200
+Flo Vir 500
+Iow Vir 100
+Flo Con 50
+Con Mis 200
+Mis Mas 50
+Vir Rho 2
+Njy Mas 500
+Rho Flo 50
+Iow Njy 100
+Iow Mis
