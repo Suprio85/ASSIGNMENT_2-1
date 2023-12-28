@@ -1,3 +1,3 @@
-# Assignmrnt of DSA 208 Course
+# Assignment of DSA 208 Course
 
-<b> Author : Suprio Paul </b>
+`<b>` Author : Suprio Paul `</b>`
