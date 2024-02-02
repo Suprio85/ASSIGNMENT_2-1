@@ -6,7 +6,14 @@ struct cndtn{
   int age;
   bool status;
 };
-
+void dfs(vector<vector<int>>& rgraph, int s, vector<bool>& visited, int v){
+    visited[s]=true;
+    for(int i=0; i<v; i++){
+        if(visited[i]==false && rgraph[s][i]>0){
+            dfs(rgraph, i, visited, v);
+        }
+    }
+}
 
 bool bfs(vector<vector<int>>& rgraph, int s, int t, vector<int>& parent, int v){
 
@@ -28,7 +35,7 @@ bool bfs(vector<vector<int>>& rgraph, int s, int t, vector<int>& parent, int v){
     return visited[t];
 }
 
-void maxFlow(vector<vector<int>> &graph, int v, int source, int sink){
+void maxFlow(vector<vector<int>> &graph, int v, int source, int sink,int n, int m){
 
     vector<vector<int>> residualGraph=graph;
     
@@ -37,16 +44,16 @@ void maxFlow(vector<vector<int>> &graph, int v, int source, int sink){
 
     while(bfs(residualGraph, source, sink, parent, v)){
         int path_flow=INT_MAX;
-    //    cout<<"path: "<<endl;
+       cout<<"path: "<<endl;
         for(int i=sink; i!=source; i=parent[i]){
-            // cout<<i<<" ";
+             cout<<i<<" ";
             int u=parent[i];
             path_flow=min(path_flow, residualGraph[u][i]);
         }
-    //     cout<<source<<endl;
-    //     cout<<"path_flow: ";
-    //     cout<<path_flow<<endl;
 
+         cout<<source<<endl;
+         cout<<"path_flow: ";
+         cout<<path_flow<<endl;
         for(int i=sink; i!=source; i=parent[i]){
             int u=parent[i];
             residualGraph[u][i]-=path_flow;
@@ -57,6 +64,36 @@ void maxFlow(vector<vector<int>> &graph, int v, int source, int sink){
 
     }
     cout<<max_flow<<endl;
+    vector<bool> visited(v,false);
+    dfs(residualGraph,0,visited,v);
+
+    cout<<"after dfs"<<endl;
+
+    for(int i=0; i<v;i++){
+        cout<<i<<" ";
+        cout<<visited[i]<<endl;
+    }
+
+    for(int i=0; i<v; i++){
+
+        if(visited[i]){
+            for(int j=0; j<v; j++)
+            {
+                if(visited[j]==false  and graph[i][j]>0){
+
+                    cout<<"man "<<i<<" "<<"woman "<<j-n<<endl;
+                }
+            }
+
+        }
+
+
+    }
+
+
+
+
+
 
 }
 
@@ -86,6 +123,8 @@ int main(){
   }
 
 
-  maxFlow(graph,v,0,v-1);
+
+
+  maxFlow(graph,v,0,v-1,n,m);
 
 }

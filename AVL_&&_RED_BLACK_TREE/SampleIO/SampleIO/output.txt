@@ -1,0 +1,84 @@
+Cmd 1: Clr
+unsuccessful
+
+Cmd 2: Em
+yes
+
+Cmd 3: I 10 Thors
+10_Thors
+
+Cmd 4: I 34 Canute
+10_Thors(,34_Canute)
+
+Cmd 5: I 43 Olaf
+34_Canute(10_Thors,43_Olaf)
+
+Cmd 6: I 15 Einer
+34_Canute(10_Thors(,15_Einer),43_Olaf)
+
+Cmd 7: I 40 Olmar
+34_Canute(10_Thors(,15_Einer),43_Olaf(40_Olmar,))
+
+Cmd 8: F 45 Estrid
+45 not found
+
+Cmd 9: I 53 Floki
+34_Canute(10_Thors(,15_Einer),43_Olaf(40_Olmar,53_Floki))
+
+Cmd 10: S
+6
+
+Cmd 11: I 90 Thorfinn
+34_Canute(10_Thors(,15_Einer),43_Olaf(40_Olmar,53_Floki(,90_Thorfinn)))
+
+Cmd 12: I 12 Snake
+34_Canute(12_Snake(10_Thors,15_Einer),43_Olaf(40_Olmar,53_Floki(,90_Thorfinn)))
+
+Cmd 13: I 78 Askeladd
+34_Canute(12_Snake(10_Thors,15_Einer),43_Olaf(40_Olmar,78_Askeladd(53_Floki,90_Thorfinn)))
+
+Cmd 14: F 40
+40 found
+
+Cmd 15: E 40
+34_Canute(12_Snake(10_Thors,15_Einer),78_Askeladd(43_Olaf(,53_Floki),90_Thorfinn))
+
+Cmd 16: F 40
+40 not found
+
+Cmd 17: E 78
+34_Canute(12_Snake(10_Thors,15_Einer),53_Floki(43_Olaf,90_Thorfinn))
+
+Cmd 18: S
+7
+
+Cmd 19: E 12
+34_Canute(10_Thors(,15_Einer),53_Floki(43_Olaf,90_Thorfinn))
+
+Cmd 20: E 43
+34_Canute(10_Thors(,15_Einer),53_Floki(,90_Thorfinn))
+
+Cmd 21: Em
+no
+
+Cmd 22: E 56
+56 not found
+
+Cmd 23: I 15 Ymir
+34_Canute(10_Thors(,15_Ymir),53_Floki(,90_Thorfinn))
+
+Cmd 24: Itr
+10 ⇒ Thors
+15 ⇒ Ymir
+34 ⇒ Canute
+53 ⇒ Floki
+90 ⇒ Thorfinn
+
+Cmd 25: Clr
+successful
+
+Cmd 26: S
+0
+
+Cmd 27: E 90
+90 not found
